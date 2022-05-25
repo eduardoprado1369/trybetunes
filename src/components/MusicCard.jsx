@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 class MusicCard extends React.Component {
@@ -34,6 +34,7 @@ class MusicCard extends React.Component {
 
   render() {
     const { currentAlbums, firstInput } = this.props;
+    console.log(currentAlbums);
     // const { showArtistName } = this.state;
     return (
       <div>
@@ -50,8 +51,8 @@ class MusicCard extends React.Component {
 }
 
 MusicCard.propTypes = {
-  currentAlbums: propTypes.array.isRequired,
-  firstInput: propTypes.string.isRequired,
+  currentAlbums: PropTypes.arrayOf(PropTypes.object).isRequired,
+  firstInput: PropTypes.string.isRequired,
 };
 
 export default MusicCard;
